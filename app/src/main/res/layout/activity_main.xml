@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:onClick="start"
+        android:text="GO!"
+        android:textSize="80sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48000002" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:columnCount="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ques"
+        app:rowCount="2"
+        tools:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textView0"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#F48FB1"
+            android:gravity="center"
+            android:onClick="ansPressed"
+            android:tag="0"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="96sp"
+            android:visibility="invisible"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#90CAF9"
+            android:gravity="center"
+            android:onClick="ansPressed"
+            android:tag="1"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="96sp"
+            android:visibility="invisible"
+            app:layout_column="1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#A5D6A7"
+            android:gravity="center"
+            android:onClick="ansPressed"
+            android:tag="2"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="96sp"
+            android:visibility="invisible"
+            app:layout_column="0"
+            app:layout_row="1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#FFF59D"
+            android:gravity="center"
+            android:onClick="ansPressed"
+            android:tag="3"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="96sp"
+            android:visibility="invisible"
+            app:layout_column="1"
+            app:layout_row="1" />
+
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/timeRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="177dp"
+        android:text="30 Seconds Left"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="164dp"
+        android:onClick="start"
+        android:text="Restart!"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeRemaining" />
+
+    <TextView
+        android:id="@+id/yourScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Score : 00/00"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ques"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00+00"
+        android:textSize="70sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yourScore" />
+
+    <TextView
+        android:id="@+id/finishScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Ques:0\nCorrect Ans:0"
+        android:textSize="55sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
