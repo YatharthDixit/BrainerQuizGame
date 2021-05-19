@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         if(isTimerRunning){
             countDownTimer.cancel();
         }
-
         yourscore=0;
         totalscore=0;
         setInterface();
@@ -37,22 +36,19 @@ public class MainActivity extends AppCompatActivity {
         ques.setVisibility(View.VISIBLE);
         timeRemaining.setVisibility(View.VISIBLE);
         restartButton.setVisibility(View.VISIBLE);
-
     }
+
     public void timer(){
         isTimerRunning=true;
         countDownTimer = new CountDownTimer(30000, 1000) {
             @Override
             public void onTick(long l) {
                 timeRemaining.setText((int)l/1000+" Seconds Left!");
-
             }
-
             @Override
             public void onFinish() {
                 isTimerRunning=false;
                 goButton.setVisibility(View.INVISIBLE);
-
                 button0.setVisibility(View.INVISIBLE);
                 button1.setVisibility(View.INVISIBLE);
                 button2.setVisibility(View.INVISIBLE);
@@ -67,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }.start();
     }
+
     public void setInterface(){
         a = rand.nextInt(500);
         b = rand.nextInt(500);
-
         ques.setText(a+"+"+b);
         locationOfCorrect= rand.nextInt(4);
         ArrayList<Integer> options = new ArrayList<Integer>();
@@ -92,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
         scoretoView.setText("Score : "+yourscore+ "/"+totalscore);
     }
 
-
-
     public void ansPressed(View view){
         totalscore++;
         String ans = view.getTag().toString();
@@ -102,9 +96,7 @@ public class MainActivity extends AppCompatActivity {
             yourscore++;        }
 
     setInterface();
-
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
